@@ -1,0 +1,39 @@
+
+<img id="theme" src="resources/contents/img/theme.jpg" class="img-responsive" />
+<br/>
+<div class="col-sm-12 col-md-6">
+    <div class="caption">
+        <dl class="text-left">
+            <dt>Fishing Comments</dt>
+            <dd>Post something down below about your fishing trip or upload an image of what you have caught. </dd>
+        </dl>
+    </div>
+</div>
+<div class="col-md-6 col-sm-12">
+    <div id="mediaList">
+        <ul class="media-list" *ngFor="let media of mediaList">
+            <li class="media table-bordered thumbnail-color">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object img-circle" src="{{media.img}}" alt="..." width="64" height="64">
+                    </a>
+                </div>
+                <div class="media-body text-left">
+                    <h4 class="media-heading">{{media.heading}}</h4>
+                    {{media.description}}
+                </div>
+                <div class="media-body text-right">
+                    {{media.date}}
+                </div>
+            </li>
+        </ul>
+    </div>
+    <br/>
+
+    <textarea class="form-control" placeholder="Fishing Post..." cols="50" row="50" [(ngModel)]="description"></textarea>&ensp;
+    <br/>
+    <div class="form-inline text-right">
+        <button class="btn btn-default control-label" (click)="postComment(description)"><span class="glyphicon glyphicon-comment"></span>&ensp;Post</button>&ensp;
+        <button class="btn btn-default control-label">&ensp;<span class="glyphicon glyphicon-picture"></span>&ensp;Upload</button>&ensp;
+    </div>
+</div>

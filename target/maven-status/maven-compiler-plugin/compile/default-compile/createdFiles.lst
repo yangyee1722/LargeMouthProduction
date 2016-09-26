@@ -1,0 +1,4 @@
+com\lgm\services\AuthenticationService.class
+com\lgm\services\JWTAuthenticationProvider.class
+com\lgm\services\JWTToken.class
+com\lgm\overrides\InterceptingFilter.class

@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="" routerLink="/home">LGM</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <!--<li>
+          <a routerLink="/activity">View Activity</a>
+        </li>-->
+        <li *ngIf="!isLogin">
+          <a><input (keyup.enter)="onLogin()" type="text" [(ngModel)]="loginModel.loginName" class="form-control input-sm" placeholder="User Name"></a>
+        </li>
+        <li *ngIf="!isLogin">
+          <a> <input (keyup.enter)="onLogin()" type="password" [(ngModel)]="loginModel.password" class="form-control input-sm"
+              placeholder="Password"></a>
+        </li>
+        <li *ngIf="!isLogin">
+          <a (click)="onLogin()">Login</a>
+        </li>
+        <li *ngIf="isLogin">
+          <a>Welcome,{{loginName}}</a>
+        </li>
+        <li *ngIf="isLogin">
+          <a (click)="onLogout()">LogOut</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-question-sign"></span> 
+        <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="" routerLink="/about">About</a></li>
+            <li><a href="" routerLink="/privacy">Privacy Policy</a></li>
+            <!--<li><a href="#"></a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>-->
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
