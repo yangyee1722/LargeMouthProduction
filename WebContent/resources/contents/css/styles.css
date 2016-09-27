@@ -1,0 +1,168 @@
+
+body { 
+  margin: 2em; 
+  background-color:#7F6B4C !important;
+  color:white !important;
+}
+
+.btn{
+  background-color:7F4800!important;
+  color:white!important;
+}
+
+dl{ 
+  color:white !important;
+}
+
+.navbar-brand{
+  color:darkgoldenrod !important;
+}
+
+#left-side-bar{
+  height: 100%;
+  background-color: #7F6B4C;
+  color:black;
+  margin:0;
+  padding:0;
+  /*box-shadow: 3px 3px 3px 3px darkgray;*/
+}
+
+#list-level{
+  padding:5px;
+  margin:5px;
+}
+
+#list-level li{
+   padding:5px;
+}
+
+#list-level li{
+ display:none;
+}
+
+#middle-content{
+  height: 100%;
+}
+
+#middle-content #theme{
+  /*box-shadow: 3px 3px 3px 3px darkgray;*/
+  width: 100%;
+  height:40%;
+}
+
+#middle-content-h1{
+  position:absolute;
+  color:#f0ad4e;
+  margin: 0 auto;
+  width:100%;
+   text-align: center;
+  font-family: 'Brush Script MT', cursive;
+  font-size:80px;
+}
+
+#middle-content-h5{
+  position:absolute;
+  color:#f0ad4e;
+  width:90%;
+  margin: 0 auto;
+  font-family: 'Brush Script MT', cursive;
+  text-align: center;
+   font-size:40px;
+
+}
+
+#mediaList {
+  height: 250px;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#mediaList ul li{
+  padding:5px;
+  border-width: 0px;
+  border-style: none;
+   border-radius:  50px 0px 0px 50px !important;
+  /*box-shadow: 3px 3px 3px 3px darkgray;*/
+}
+
+.navbar{
+  border-color:darkgoldenrod !important;
+  background-color:#f0ad4e !important;
+  /*box-shadow: 3px 3px 3px 3px darkgray;*/
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+  /*border-radius:  5px 5px 0px 0px !important;*/
+}
+
+.navbar li a{
+ color:#7F6B4C!important;
+}
+
+.navbar li:hover{
+  font-weight: bold !important;
+  border-color: darkgoldenrod !important;
+}
+
+.navbar li a:hover {
+  font-weight: bold !important;
+}
+.navbar li ul{
+  background-color:#f0ad4e !important;
+}
+#right-side-bar{
+  height: 100%;
+  background-color: #7F6B4C;
+  color:black;
+  margin:0;
+  padding:0; 
+  /*box-shadow: 3px 3px 3px 3px darkgray;*/
+  /*font-family: 'Brush Script MT', cursive;*/
+}
+
+#right-side-bar li:hover #list-level li{
+  display:block;
+  padding:5px;
+  text-align:  left;
+}
+
+#right-side-bar h3{
+  font-weight: bold;
+}
+
+#right-side-bar ul{
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+#right-side-bar li{
+  padding:10px;
+  margin:3px;
+}
+
+#right-side-bar li span {
+  float:right;
+}
+
+#right-side-bar li:hover{
+  border-width: 0px 0px 0px 3px;
+  border-style: solid;
+  font-weight: bold;
+}
+
+.thumbnail-color{
+ background-color:#f0ad4e !important;
+ /*box-shadow: 3px 3px 3px 3px gray;*/
+ color:#7F4800;
+ font-weight: bold;
+}
+
+/*#right-side-bar li #list-level li:hover{
+  color:#eee;
+}*/
+
+/* 
+ * See https://github.com/angular/angular.io/blob/master/public/docs/_examples/styles.css
+ * for the full set of master styles used by the documentation samples
+ */
