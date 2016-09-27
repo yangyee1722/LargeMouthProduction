@@ -20,7 +20,7 @@ public class JWTAuthenticationProvider implements AuthenticationProvider {
 	private JWSVerifier verifier;
 
 	public JWTAuthenticationProvider() {
-		this.verifier = new MACVerifier("superSecretKey");
+		this.verifier = new MACVerifier("DB4AEF4719809709E560ED8DE2F9C77B886B963B28BA20E9A8A621BBD4ABA599");
 	}
 
 	@Override
