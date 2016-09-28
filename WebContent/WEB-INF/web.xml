@@ -13,7 +13,7 @@
     </servlet>
     <filter>
     <filter-name>InterceptingFilter</filter-name>
-    <filter-class>com.lgm.overrides.InterceptingFilter</filter-class>
+    <filter-class>com.lgm.filter.InterceptingFilter</filter-class>
   </filter>
   <filter-mapping> 
     <filter-name>InterceptingFilter</filter-name>

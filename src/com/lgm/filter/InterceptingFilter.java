@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.Assert;
@@ -52,17 +53,15 @@ public class InterceptingFilter extends GenericFilterBean {
 			String stringToken = req.getHeader("Authorization");
 			
 			if (stringToken == null) {
-				// throw new InsufficientAuthenticationException("Authorization
-				// header not found");
-				System.out.println("Authorization Header was not found");
+				res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				//System.out.println("Authorization Header was not found");
 			}
 
 			// remove schema from token
 			String authorizationSchema = "Bearer";
 			if (stringToken.indexOf(authorizationSchema) == -1) {
-				// throw new InsufficientAuthenticationException("Authorization
-				// schema not found");
-				message = "Authorization Header incorrect format";
+				res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				//message = "Authorization Header incorrect format";
 			}
 			stringToken = stringToken.substring(authorizationSchema.length()).trim();
 
@@ -73,7 +72,8 @@ public class InterceptingFilter extends GenericFilterBean {
 				SecurityContextHolder.getContext().setAuthentication(auth);
 				chain.doFilter(request, response);
 			} catch (ParseException e) {
-				System.out.println("Invalid Token");
+				res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+				//System.out.println("Invalid Token");
 			}
 		} catch (AuthenticationException e) {
 			SecurityContextHolder.clearContext();
@@ -81,7 +81,7 @@ public class InterceptingFilter extends GenericFilterBean {
 			 * if (entryPoint != null) { entryPoint.commence(req, res, e); }
 			 */
 		}catch(Exception e){
-			System.out.println(e.getMessage());
+			 res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		}
 
 	}

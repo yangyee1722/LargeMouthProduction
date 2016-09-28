@@ -22,7 +22,7 @@ public class JWTGenerator {
 		claimsSet.setIssuer("lofttalk.com");
 		claimsSet.setExpirationTime(new DateTime().plusHours(1).toDate());
 		claimsSet.setNotBeforeTime(now);
-		String token = "Bearer " + signAndSerializeJWT(claimsSet, "superSecretKey");
+		String token = "Bearer " + signAndSerializeJWT(claimsSet, "DB4AEF4719809709E560ED8DE2F9C77B886B963B28BA20E9A8A621BBD4ABA599");
 		return token;
 	}
 
