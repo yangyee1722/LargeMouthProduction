@@ -1,3 +1,10 @@
+com\lgm\services\JWTGenerator.class
+com\lgm\test\MainControllerTest.class
 com\lgm\services\JWTToken.class
+com\lgm\controllers\MainController.class
+com\lgm\filter\InterceptingFilter.class
 com\lgm\services\AuthenticationService.class
+com\lgm\models\LoginModel.class
+com\lgm\controllers\AuthenticationController.class
 com\lgm\services\JWTAuthenticationProvider.class
+com\lgm\services\AuthenticationOverride.class

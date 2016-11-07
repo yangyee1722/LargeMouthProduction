@@ -51,9 +51,17 @@ var NavbarComponent = (function () {
             this.toastr.error('Invalid Credentials.', "Error");
         }
     };
+    NavbarComponent.prototype.extractJWT = function (input) {
+        console.log(atob(input));
+    };
+    ;
     NavbarComponent.prototype.onLogin = function () {
-        var _this = this;
-        this.loginService.compare(this.loginModel.loginName, this.loginModel.password).then(function (i) { return _this.goToActivity(i); });
+        this.loginService.login(this.loginModel.loginName, this.loginModel.password).subscribe(function (data) {
+            var token = data.token;
+            var split = token.split('.')[1];
+            var obj = JSON.parse(atob(split));
+            console.log(obj);
+        });
     };
     NavbarComponent.prototype.goBack = function () {
         this.clear();
