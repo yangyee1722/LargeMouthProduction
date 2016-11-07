@@ -41,14 +41,14 @@
         main: './main.js',
         defaultExtension: 'js'
       },
-      'ng2-toastr':{main:'./ng2-toastr.js', defaultExtension:'js'},
       rxjs: {
         defaultExtension: 'js'
       },
       'angular2-in-memory-web-api': {
         main: './index.js',
         defaultExtension: 'js'
-      }
+      },
+      'ng2-toastr':{main:'./ng2-toastr.js', defaultExtension:'js'}
     }
   });
 })(this);

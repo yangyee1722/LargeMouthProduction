@@ -24,6 +24,7 @@ var app_logout_component_1 = require("./app.logout.component");
 var enter_1 = require("./directive/enter");
 var app_routingService_1 = require("./services/app.routingService");
 var ng2_toastr_1 = require('ng2-toastr');
+var http_1 = require('@angular/http');
 var options = {
     autoDismiss: false,
     positionClass: 'toast-top-center',
@@ -37,7 +38,9 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 app_routing_1.routing,
-                ng2_toastr_1.ToastModule
+                ng2_toastr_1.ToastModule,
+                http_1.HttpModule,
+                http_1.JsonpModule
             ],
             declarations: [
                 app_activity_component_1.ActivityComponent,

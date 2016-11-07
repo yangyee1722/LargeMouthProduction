@@ -19,28 +19,16 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.Assert;
 import org.springframework.web.filter.GenericFilterBean;
 
+import com.lgm.services.JWTAuthenticationProvider;
 import com.lgm.services.JWTToken;
 import com.nimbusds.jwt.JWT;
 import com.nimbusds.jwt.JWTParser;
 
 public class InterceptingFilter extends GenericFilterBean {
-	// private AuthenticationEntryPoint entryPoint;
-	public InterceptingFilter(){
-		
+	public InterceptingFilter() {
 	}
 
-	private AuthenticationManager authenticationManager;
 	private static String message;
-	
-	public InterceptingFilter(AuthenticationManager authenticationManager) {
-		this.authenticationManager = authenticationManager;
-		// this.entryPoint = entryPoint;
-	}
-
-	@Override
-	public void afterPropertiesSet() throws ServletException {
-		Assert.notNull(authenticationManager);
-	}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -48,31 +36,39 @@ public class InterceptingFilter extends GenericFilterBean {
 		// TODO Auto-generated method stub
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
-
 		try {
 			String stringToken = req.getHeader("Authorization");
-			
+
 			if (stringToken == null) {
 				res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+<<<<<<< HEAD
 				//System.out.println("Authorization Header was not found");
+=======
+>>>>>>> master
 			}
 
 			// remove schema from token
 			String authorizationSchema = "Bearer";
 			if (stringToken.indexOf(authorizationSchema) == -1) {
 				res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+<<<<<<< HEAD
 				//message = "Authorization Header incorrect format";
+=======
+				// message = "Authorization Header incorrect format";
+>>>>>>> master
 			}
 			stringToken = stringToken.substring(authorizationSchema.length()).trim();
 
 			try {
 				JWT jwt = JWTParser.parse(stringToken);
-				JWTToken token = new JWTToken(jwt);				
+				JWTToken token = new JWTToken(jwt);
+				JWTAuthenticationProvider authenticationManager = new JWTAuthenticationProvider();
 				Authentication auth = authenticationManager.authenticate(token);
 				SecurityContextHolder.getContext().setAuthentication(auth);
 				chain.doFilter(request, response);
 			} catch (ParseException e) {
 				res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+<<<<<<< HEAD
 				//System.out.println("Invalid Token");
 			}
 		} catch (AuthenticationException e) {
@@ -82,6 +78,13 @@ public class InterceptingFilter extends GenericFilterBean {
 			 */
 		}catch(Exception e){
 			 res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+=======
+			}
+		} catch (AuthenticationException e) {
+			SecurityContextHolder.clearContext();
+		} catch (Exception e) {
+			res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+>>>>>>> master
 		}
 
 	}

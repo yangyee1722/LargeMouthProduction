@@ -14,6 +14,7 @@ import { LogoutComponent } from "./app.logout.component";
 import { EnterDirective } from "./directive/enter";
 import { RouterLinkService } from "./services/app.routingService";
 import { ToastModule,ToastOptions } from 'ng2-toastr';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 let options = <ToastOptions>{
   autoDismiss: false,
@@ -26,7 +27,9 @@ let options = <ToastOptions>{
     BrowserModule,
     FormsModule,
     routing,
-    ToastModule
+    ToastModule,
+    HttpModule,
+    JsonpModule
   ],
 
   declarations: [

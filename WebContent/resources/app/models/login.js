@@ -5,4 +5,10 @@ var LoginModel = (function () {
     return LoginModel;
 }());
 exports.LoginModel = LoginModel;
+var TokenModel = (function () {
+    function TokenModel() {
+    }
+    return TokenModel;
+}());
+exports.TokenModel = TokenModel;
 //# sourceMappingURL=login.js.map
